@@ -1,4 +1,4 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -458,11 +458,11 @@ footer {
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .coverage { gap: 2rem; }
-  .fold-stats { display: none; }
+  .fold-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: 2rem; }
   .fold-left { padding: 6% 5%; }
-  .above-fold { min-height: auto; padding-bottom: 3rem; }
-  .fold-cta { flex-direction: column; }
-  .fold-cta a { text-align: center; }
+  .above-fold { min-height: auto; padding-bottom: 0; }
+  .fold-cta { flex-direction: row; flex-wrap: wrap; gap: 0.6rem; }
+  .fold-cta a { flex: 1; min-width: 130px; text-align: center; padding: 0.8rem 1rem; font-size: 0.85rem; }
   .eyebrow { font-size: 0.65rem; }
   .fold-left p { font-size: 0.95rem; }
   .fold-left h1 { font-size: 2rem !important; letter-spacing: -0.01em !important; }
@@ -599,6 +599,30 @@ footer {
   .why-us-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .why-us-image img { height: 320px; }
 }
+
+/* ── SOCIAL STRIP ── */
+.social-strip {
+  background: var(--navy);
+  display: flex; align-items: stretch;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(197,50,90,0.25);
+}
+.ss-item {
+  flex: 1; min-width: 240px;
+  padding: 1.4rem 2rem;
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+.ss-divider {
+  width: 1px; background: rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.ss-stars { color: #f0c040; font-size: 0.75rem; letter-spacing: 2px; }
+.ss-text { color: rgba(255,255,255,0.75); font-size: 0.85rem; font-style: italic; font-weight: 300; line-height: 1.4; }
+.ss-name { color: var(--pink); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; }
+@media (max-width: 768px) {
+  .ss-divider { width: 100%; height: 1px; }
+  .ss-item { min-width: 100%; padding: 1rem 5%; }
+}
 </style>
 </head>
 <body>
@@ -646,6 +670,28 @@ footer {
     </div>
   </div>
 </div>
+</div>
+
+
+<!-- SOCIAL PROOF STRIP -->
+<div class="social-strip">
+  <div class="ss-item">
+    <span class="ss-stars">★★★★★</span>
+    <span class="ss-text">"Incredible job — can't recommend highly enough"</span>
+    <span class="ss-name">— Donna-Lee, Inglewood</span>
+  </div>
+  <div class="ss-divider"></div>
+  <div class="ss-item">
+    <span class="ss-stars">★★★★★</span>
+    <span class="ss-text">"Efficient, polite and well priced"</span>
+    <span class="ss-name">— Clair, Trigg</span>
+  </div>
+  <div class="ss-divider"></div>
+  <div class="ss-item">
+    <span class="ss-stars">★★★★★</span>
+    <span class="ss-text">"Left the yard so neat afterwards"</span>
+    <span class="ss-name">— Christy, Claremont</span>
+  </div>
 </div>
 
 <!-- TICKER -->
